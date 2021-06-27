@@ -60,3 +60,10 @@ functions:
       - http:
           path: guitars/{username}
           method: get
+
+  listAllGuitars:
+    handler: listAllGuitars.main
+    events:
+      - http:
+          path: allguitars
+          method: get
