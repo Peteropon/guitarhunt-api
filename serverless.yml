@@ -74,3 +74,10 @@ functions:
       - http:
           path: guitars/{id}
           method: put
+
+  delete:
+    handler: delete.main
+    events:
+      - http:
+          path: guitars/{id}
+          method: delete
