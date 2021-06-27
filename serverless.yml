@@ -25,6 +25,7 @@ provider:
 
   environment:
     tableName: guitars
+    index: user-guitars-index
 
   iamRoleStatements:
     - Effect: Allow
@@ -51,4 +52,11 @@ functions:
     events:
       - http:
           path: guitars/{id}
+          method: get
+
+  listUserGuitars:
+    handler: listUserGuitars.main
+    events:
+      - http:
+          path: guitars/{username}
           method: get
