@@ -45,3 +45,10 @@ functions:
       - http:
           path: guitars
           method: post
+
+  get:
+    handler: get.main
+    events:
+      - http:
+          path: guitars/{id}
+          method: get
