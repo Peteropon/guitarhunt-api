@@ -67,3 +67,10 @@ functions:
       - http:
           path: allguitars
           method: get
+
+  update:
+    handler: update.main
+    events:
+      - http:
+          path: guitars/{id}
+          method: put
