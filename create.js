@@ -13,6 +13,7 @@ export const main = handler(async (event, context) => {
       title: data.title,
       description: data.description, // Parsed from request body
       attachment: data.attachment, // Parsed from request body
+      urlLink: data.urlLink, // Parsed from request body
       votes: 0,
       comments: [],
       isActive: true,
