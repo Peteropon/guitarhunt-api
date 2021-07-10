@@ -53,7 +53,7 @@ functions:
     handler: get.main
     events:
       - http:
-          path: guitars/{id}
+          path: guitars/{id}/{username}
           method: get
           cors: true
 
