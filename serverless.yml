@@ -47,6 +47,7 @@ functions:
           path: guitars
           method: post
           cors: true
+          authorizer: aws_iam
 
   get:
     handler: get.main
@@ -89,3 +90,6 @@ functions:
           path: guitars/{id}
           method: delete
           cors: true
+
+resources:
+  - ${file(resources/api-gateway-errors.yml)}
