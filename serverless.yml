@@ -46,6 +46,7 @@ functions:
       - http:
           path: guitars
           method: post
+          cors: true
 
   get:
     handler: get.main
@@ -53,6 +54,7 @@ functions:
       - http:
           path: guitars/{id}
           method: get
+          cors: true
 
   listUserGuitars:
     handler: listUserGuitars.main
@@ -60,6 +62,7 @@ functions:
       - http:
           path: guitars/users/{username}
           method: get
+          cors: true
           authorizer: aws_iam
 
   listAllGuitars:
@@ -68,6 +71,7 @@ functions:
       - http:
           path: allguitars
           method: get
+          cors: true
           authorizer: aws_iam
 
   update:
@@ -76,6 +80,7 @@ functions:
       - http:
           path: guitars/{id}
           method: put
+          cors: true
 
   delete:
     handler: delete.main
@@ -83,3 +88,4 @@ functions:
       - http:
           path: guitars/{id}
           method: delete
+          cors: true
