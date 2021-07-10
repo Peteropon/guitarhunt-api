@@ -9,7 +9,7 @@ export const main = handler(async (event, context) => {
     Item: {
       // The attributes of the item to be created
       guitarId: uuid.v1(), // A unique uuid
-      username: "fdasadfda",
+      username: event.requestContext.identity.username,
       title: data.title,
       description: data.description, // Parsed from request body
       attachment: data.attachment, // Parsed from request body

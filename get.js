@@ -7,7 +7,7 @@ export const main = handler(async (event, context) => {
     // 'Key' defines the partition key and sort key of the item to be retrieved
     Key: {
       guitarId: event.pathParameters.id, // The id of the guitar from the path
-      username: "fdasadfda", // The username of the author
+      username: event.requestContext.identity.username, // The username of the author
     },
   };
 
