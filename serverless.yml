@@ -58,8 +58,9 @@ functions:
     handler: listUserGuitars.main
     events:
       - http:
-          path: guitars/{username}
+          path: guitars/users/{username}
           method: get
+          authorizer: aws_iam
 
   listAllGuitars:
     handler: listAllGuitars.main
@@ -67,6 +68,7 @@ functions:
       - http:
           path: allguitars
           method: get
+          authorizer: aws_iam
 
   update:
     handler: update.main
