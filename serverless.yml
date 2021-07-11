@@ -79,7 +79,7 @@ functions:
     handler: update.main
     events:
       - http:
-          path: guitars/{id}
+          path: guitars/{id}/{username}
           method: put
           cors: true
 
@@ -87,9 +87,10 @@ functions:
     handler: delete.main
     events:
       - http:
-          path: guitars/{id}
+          path: guitars/{id}/{username}
           method: delete
           cors: true
+          authorizer: aws_iam
 
 resources:
   - ${file(resources/api-gateway-errors.yml)}
