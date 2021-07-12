@@ -15,17 +15,11 @@ provider:
   runtime: nodejs12.x
   stage: prod
   region: us-east-2
-  # To load environment variables externally
-  # rename env.example to .env and uncomment
-  # the following line. Also, make sure to not
-  # commit your .env.
-  #
-  #environment:
-  #  SAMPLE_ENV_VAR: ${env:SAMPLE_ENV_VAR}
 
   environment:
     tableName: guitars
     index: user-guitars-index
+    stripeSecretKey: ${env:STRIPE_SECRET_KEY}
 
   iamRoleStatements:
     - Effect: Allow
@@ -89,6 +83,15 @@ functions:
       - http:
           path: guitars/{id}/{username}
           method: delete
+          cors: true
+          authorizer: aws_iam
+
+  billing:
+    handler: billing.main
+    events:
+      - http:
+          path: billing
+          method: post
           cors: true
           authorizer: aws_iam
 
