@@ -86,6 +86,15 @@ functions:
           cors: true
           authorizer: aws_iam
 
+  voteUp:
+    handler: voteUp.main
+    events:
+      - http:
+          path: guitars/votes/{id}/{username}
+          method: put
+          cors: true
+          authorizer: aws_iam
+
   billing:
     handler: billing.main
     events:
