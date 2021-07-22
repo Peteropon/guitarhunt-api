@@ -11,7 +11,7 @@ export const main = handler(async (event, context) => {
     },
     UpdateExpression: "SET votes = :votes",
     ExpressionAttributeValues: {
-      ":votes": data.votes || null,
+      ":votes": data.votes + 1,
     },
     ReturnValues: "ALL_NEW",
   };
